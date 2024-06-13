@@ -1,11 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    '@sidebase/nuxt-auth',
-  ],
-  runtimeConfig:{
-    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET
+  modules: ['@nuxtjs/tailwindcss'],
+  tailwindcss: {
+    cssPath: ['~/assets/css/tailwind.css', { injectPosition: "first" }],
+    configPath: 'tailwind.config',
+    exposeConfig: {
+      level: 2
+    },
+    config: {},
+    viewer: true,
   }
+ 
 })
