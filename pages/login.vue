@@ -39,13 +39,19 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import {storeToRefs} from "pinia";
+import {apiUser} from "~/stores/apiUser";
+
+const {authenticated } = storeToRefs(apiUser())
+const {Login} = apiUser();
 
 definePageMeta({
   layout: 'customer',
 });
+const router = useRouter()
 
-const username = ref('');
-const password = ref('');
+const username = ref('emilys');
+const password = ref('emilyspass');
 
 const usernameError = computed(() => {
   return !username.value ? 'Username is required' : '';
@@ -59,11 +65,21 @@ const valid = computed(() => {
   return username.value && password.value;
 });
 
-const submit = () => {
+
+
+const submit = async () => {
   if (valid.value) {
-    // Handle the login logic here
-    console.log('Username:', username.value);
-    console.log('Password:', password.value);
+
+    const data = {
+      username: username.value,
+      password: password.value,
+      expiresInMins: 30
+    }
+    // const check = await Login(dat
+   await Login(data)
+    if (authenticated) {
+      router.push('/');
+    }
   }
 };
 </script>
