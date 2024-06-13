@@ -2,8 +2,13 @@
 
 <template>
   <div>
-    Layout: default
-    <slot />
+    <div>
+      <Header />
+    </div>
+    <v-container>
+
+      <slot />
+    </v-container>
   </div>
 </template>
 
