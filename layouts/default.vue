@@ -1,12 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
-    <div>
+  <div >
       <Header />
-    </div>
     <v-container>
-
       <slot />
     </v-container>
   </div>
