@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@auth/core": "^0.32.0",
+    "@sidebase/nuxt-auth": "^0.7.2",
+    "next-auth": "^4.24.7",
+    "nuxt": "^3.12.1",
+    "pgmg": "^0.0.11",
+    "postgres": "^3.4.4",
+    "vue": "^3.4.27",
+    "vue-router": "^4.3.3"
+  }
+}
